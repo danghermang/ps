@@ -1,0 +1,9 @@
+z_test=function(alfa,n,sample_mean,pop_mean,sigma)
+{
+  sigma=sqrt(sigma)
+  critical_z=qnorm(1-alfa/2)
+  z_score=(sample_mean-pop_mean)/(sigma/sqrt(n))
+  print(critical_z)
+  print(z_score)
+}
+z_test(0.05,49,90,90,144)

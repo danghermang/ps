@@ -1,0 +1,9 @@
+test_proportion=function(alfa,n,succes,p0)
+{
+  p_prim=succes/n
+  z_score=(p_prim-p0)/sqrt(p0*(1-p0)/n)
+  critical_z=qnorm(1-alfa,0,1)
+  print(critical_z)
+  print(z_score)
+}
+test_proportion(0.01,100,63,0.6)

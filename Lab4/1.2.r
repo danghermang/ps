@@ -1,0 +1,10 @@
+t_conf_interval=function(n,media,alfa,s2)
+{
+  critical_t=qt(1-alfa/2,n-1)
+  s=sqrt(s2)
+  a=media-critical_t*(s/sqrt(n))
+  b=media+critical_t*(s/sqrt(n))
+  interval=c(a,b)
+  interval
+}
+t_conf_interval(196,44.65,0.01,2.25)

@@ -1,0 +1,11 @@
+zconfidence_interval=function(alfa,sample,n,d)
+{
+  sigma=sqrt(d)
+  critical_z=qnorm(1-alfa/2,0,1)
+  a=sample-critical_z*sigma/sqrt(n)
+  b=sample+critical_z*sigma/sqrt(n)
+  interval=c(a,b)
+  return (interval)
+}
+  d=140*140
+  zconfidence_interval(0.01,1280,100,d)

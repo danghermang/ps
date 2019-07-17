@@ -1,0 +1,9 @@
+graphic_density=function(m,d)
+{
+  t=seq(-10,10,length=400)
+  f=1/sqrt(d)*sqrt(2*pi)*exp(-(t-m)^2/2*d)
+  plot(t,f,type="l",lwd=1)
+}
+graphic_density(0,4)
+graphic_density(2,5)
+graphic_density(1,9)

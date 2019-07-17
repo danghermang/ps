@@ -1,0 +1,13 @@
+multinomial_test=function(alfa,o,p)
+{
+  s=length(o)
+  n=sum(o)
+  E=n*p
+  critical_Chi_square=qchisq(1-alfa,s-1)
+  Chi_square_score=sum((o-E)^2/E)
+  print(critical_Chi_square)
+  print(Chi_square_score)
+}
+o=c(18,12,25,23,8,19,14)
+p=c(1/7,1/7,1/7,1/7,1/7,1/7,1/7)
+multinomial_test(0.05,o,p)

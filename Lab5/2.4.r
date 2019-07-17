@@ -1,0 +1,19 @@
+t_test=function(alfa,fisier,pop_mean)
+{
+  x=scan(fisier)
+  n=length(x)
+  sample_mean=mean(x)
+  s=sd(x)
+  if(sample_mean<pop_mean){
+    critical_t=qt(alfa,n-1)
+  }else if(sample_mean>pop_mean){
+    critical_t=qt(1-alfa,n-1)
+  }else{
+    critical_t=qt(1-alfa/2,n-1)
+  }
+  t_score=(sample_mean-pop_mean)/(s/sqrt(n))
+  print(critical_t)
+  print(t_score)
+}
+t_test(0.01,"history.txt",80)
+t_test(0.05,"history.txt",80)

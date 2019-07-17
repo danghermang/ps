@@ -1,0 +1,9 @@
+t_test=function(alfa,n,sample_mean,pop_mean,sigma)
+{
+  s=sqrt(sigma)
+  critical_t=qt(1-alfa/2,n-1)
+  t_score=(sample_mean-pop_mean)/(s/sqrt(n))
+  print(critical_t)
+  print(t_score)
+}
+t_test(0.01,64,52,49,89.5)

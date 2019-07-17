@@ -1,0 +1,23 @@
+t_test_means=function(alfa,n1,n2,s1,s2,mean1,mean2)
+{
+  m0=0
+  s1=s1*s1
+  s2=s2*s2
+  critical_f_s=qf(alfa/2,n1-1,n2-1)
+  critical_f_d=qf(1-alfa/2,n2-1,n1-1)
+  f_score=s1/s2
+  if(f_score>=critical_f_s && f_score<=critical_f_d){
+    df=n1+n2-2
+    s=((n1-1)*s1+(n2-1)*s2)/df
+    combined_s=sqrt(s/n1+s/n2)
+    #combined_s=sqrt(((n1-1)*s1+(n2-1)*s2)/df)*sqrt(1/n1+1/n2)
+  }else{
+    df=min(n1-1,n2-1)
+    combined_s=sqrt(s1/n1+s2/n2)
+  }
+  critical_t=qt(1-alfa/2,df)
+  t_score=(mean1-mean2-m0)/combined_s
+  print(critical_t)
+  print(t_score)
+}
+t_test_means(0.01,110,105,4.25,3.85,25.84,21.53)
